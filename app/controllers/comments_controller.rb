@@ -18,8 +18,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(params[:comment])
+    
     #@comment.suggestion_id = params[:suggestion_id]
     @suggestion = Suggestion.find(params[:suggestion_id])
+
     @comment.save
     redirect_to suggestion_comments_path(@suggestion)
   end

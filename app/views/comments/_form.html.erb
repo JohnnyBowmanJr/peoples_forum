@@ -1,6 +1,8 @@
 <div class="comments-form">
   <%= form_for((@comment), :url => suggestion_comments_path(@comment.suggestion)) do |f| %>
 
+  	<%= f.hidden_field :suggestion_id %>
+
     <div class="field">
       <%= f.label :body %><br />
       <%= f.text_area :body %> 
