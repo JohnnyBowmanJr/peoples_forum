@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
 
 	def index
-    @suggestion = Suggestion.find(params[:suggestion_id].to_i)
+    @suggestion = Suggestion.find(params[:suggestion_id])
     @comments = @suggestion.comments
+
+    @comment = Comment.new   
+    @comment.suggestion = @suggestion
  
   end
 

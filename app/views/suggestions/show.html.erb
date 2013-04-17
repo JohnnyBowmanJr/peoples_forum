@@ -8,13 +8,11 @@
 
 <%= link_to 'Edit', edit_suggestion_path(@suggestion) %> |
 <%= link_to 'Back', suggestions_path %>
-<%= link_to 'Make comment on this suggestion', new_suggestion_comment_path(@suggestion) %>
+<%= link_to 'Make a comment on this suggestion', new_suggestion_comment_path(@suggestion) %>
 
 <div class="comment-list">
 	<% if @suggestion.comments == [] %>
 		<p>Be the first to enter a comment</p>
-		render ''
-
 		<%= render :partial => '/comments/form' %>
 	<% else %>
 		<p>Add a comment</p>
