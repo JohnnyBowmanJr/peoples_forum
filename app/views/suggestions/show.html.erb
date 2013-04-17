@@ -12,30 +12,13 @@
 
 <div class="comment-list">
 	<% if @suggestion.comments == [] %>
-		<div class="create-comment">
-			<% if false %>
-				<h4>Create a Comment</h4>
-				<%= form_for(@comment) do |f| %>
-	   
-	    		<div class="field">
-	      		<%= f.label :body %><br />
-	      		<%= f.text_field :body %>
-	    		</div> 
-	    			<%= f.submit %>
-	  		<% end %>
-  		<% end %>
-		</div>
+		<p>Be the first to enter a comment</p>
+		render ''
+
+		<%= render :partial => '/comments/form' %>
 	<% else %>
-		<% @suggestion.comments.each do |comment| %>
-			<div class="comment-bar">
-				<div class="comment-body">
-					<%= @comment.body %>
-				</div>
-				<div class="comment-author">
-					<%= @comment.author %>
-				</div>
-			</div>
-		<% end %>		
+		<p>Add a comment</p>
+			<%= render :partial => '/comments/form' %>
 	<% end %>
 </div>
 

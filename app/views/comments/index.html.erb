@@ -1,4 +1,15 @@
 <h1>Comments for Suggestion: <%= @suggestion.title %></h1>
+  
+  <% if @suggestion.comments == [] %>
+    <p>Be the first to enter a comment</p>
+    render ''
+
+    <%= render :partial => 'form' %>
+  <% else %>
+    <p>Add a comment</p>
+      <%= render :partial => 'form' %>
+  <% end %>
+
 
 <div class="comment-list">
   <% @comments.each do |comment| %>
@@ -16,6 +27,4 @@
     </div>
   <% end %>
 </div>
-
-
 
