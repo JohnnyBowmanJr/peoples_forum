@@ -1,0 +1,26 @@
+<h1>Most Popular Ideas</h1>
+
+<div class="suggestion-list">
+  <% @suggestions.each do |suggestion| %>
+    <div class="suggestion-bar">
+      <div class="clearfix">  
+        <div class="vote-up">
+          <%= link_to "Vote Up", suggestions_path %>
+        </div>
+        <div class="vote-count">
+          <%= suggestion.votes %> 
+        </div>
+        <div class="suggestion-title">
+          <%= link_to suggestion.title, suggestion_comments_path(suggestion.id) %>
+        </div>
+        <div class="author">
+          <!-- change the link direction to the author's index page showing all suggestions here -->
+          <%= link_to "Author Name Here", suggestion %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+

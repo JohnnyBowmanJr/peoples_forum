@@ -1,0 +1,52 @@
+/*// Place all the styles related to the suggestions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+
+/* INDEX CSS */
+
+.suggestion-list {
+	width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div .suggestion-bar {
+	width: 650px;
+	padding: 10px 0 0 10px;
+	border-bottom: 1px solid black;
+	
+}
+
+div .vote-up {
+	float: left;
+	width: 60px;
+	margin: 0 10px 0 0;
+}
+
+div .vote-count {
+	float: left;
+	width: 60px;
+	margin: 0 10px 0 0;
+}
+
+div .suggestion-title {
+	width: 550px;
+	font-size: 20px;
+
+}
+
+div .author {
+	float: right;
+}
+
+
+/* SHOW CSS */
+div .suggestion-title {
+	border: 1px solid black;
+}
+
+div .suggestion-body {
+	border: 1px solid black;
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VOX POPVLI</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="header">
+		<h1><%= link_to "VOX POPVLI", suggestions_path %></h1>
+		<div class="suggestion-button">
+			<%= link_to "Tell us your suggestion", new_suggestion_path %>
+		</div>
+	</div>
+	<div id="container">
+		<div id="content">
+			<%= yield %>
+		</div>
+		<div id="sidebar">
+			<div class="search-bar">
+				search bar goes here
+			</div>
+			<div class="tags-bar">
+				<p>Browse by Category</p>
+				<p>Tags go here</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+

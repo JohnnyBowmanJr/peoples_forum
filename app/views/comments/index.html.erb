@@ -1,0 +1,21 @@
+<h1>Comments for Suggestion: <%= @suggestion.title %></h1>
+
+<div class="comment-list">
+  <% @comments.each do |comment| %>
+    <div class="comment-bar">
+      <div class="clearfix">  
+        
+        <div class="comment-body">
+          <%= comment.body %>
+        </div>
+        <div class="author">
+          <!-- create a link to have all author's comments show here -->
+          
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
