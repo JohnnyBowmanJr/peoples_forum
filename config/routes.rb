@@ -3,14 +3,11 @@ ExecutiveCallback::Application.routes.draw do
     resources :comments
   end
   resources :users
-  resources :calls
-
-
-  match 'suggestions/' => 'suggestions#vote'
-
-  
-  
-
+  resources :calls do
+    collection do
+        post 'voice'
+    end
+  end
 
 
   # The priority is based upon order of creation:
