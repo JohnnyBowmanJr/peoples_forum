@@ -1,13 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
 one:
-  title: MyString
-  body: MyText
-  votes: 1
+  title: We want more coffee
+  body: We never have enough coffee and I would like more
+  votes: 0
   employee_id: 1
 
-two:
-  title: MyString
-  body: MyText
-  votes: 1
-  employee_id: 1
+toilet:
+  title: Toilet bowl issue
+  body: Dudes need to learn how to user the bathroom. It's gross in there.
+  votes: 20
+  employee_id: 2
+
+kitchen:
+  title: Make the kitchen cleaner
+  body: Nobody has cleaned the refrigerator for ages. We should take turns cleaning it weekly.
+  votes: 5
+  employee_id: 2
+
+fridays:
+  title: We should get out on Fridays at 12pm
+  body: Everyone else does it but us. Let's start doing it.
+  votes: 10
+  employee_id: 3

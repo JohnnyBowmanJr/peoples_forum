@@ -5,7 +5,12 @@
     <div class="suggestion-bar">
       <div class="clearfix">  
         <div class="vote-up">
-          <%= link_to "Vote Up", suggestions_path %>
+          <% @suggestion = suggestion %>
+          <%= form_for((@suggestion), :url => { :action => "vote" }) do |f| %>
+            <%= f.hidden_field :id %>
+            <%= f.submit "Vote up" %>
+          <% end %>
+
         </div>
         <div class="vote-count">
           <%= suggestion.votes %> 
@@ -15,7 +20,7 @@
         </div>
         <div class="author">
           <!-- change the link direction to the author's index page showing all suggestions here -->
-          <%= link_to "Author Name Here", suggestion %>
+          <%= suggestion.comments.length %> comments | submitted <%= time_ago_in_words(Time.now)%> ago | <%= link_to "Author Name Here", suggestion %>
         </div>
       </div>
     </div>
