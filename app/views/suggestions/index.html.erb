@@ -20,7 +20,7 @@
         </div>
         <div class="author">
           <!-- change the link direction to the author's index page showing all suggestions here -->
-          <%= suggestion.comments.length %> comments | submitted <%= time_ago_in_words(Time.now)%> ago | <%= link_to "Author Name Here", suggestion %>
+          <%= suggestion.comments.length %> comments | submitted <%= time_ago_in_words(Time.now)%> ago | <%= link_to "Call Suggester", call_path(suggestion.id) %>
         </div>
       </div>
     </div>
