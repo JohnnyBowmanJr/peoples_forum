@@ -3,12 +3,13 @@ ExecutiveCallback::Application.routes.draw do
     resources :comments
   end
   resources :users
+  resources :calls
 
 
   match 'suggestions/' => 'suggestions#vote'
 
-  match 'suggestions/:suggestion_id/call' => 'suggestions#call', :as => :call
-
+  
+  
 
 
 
