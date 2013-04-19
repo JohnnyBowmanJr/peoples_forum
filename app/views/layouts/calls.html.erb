@@ -11,41 +11,42 @@
       type="text/css" rel="stylesheet" />
     <script type="text/javascript">
  
-    Twilio.Device.setup("<%= @token %>", {debug: true});
- 
-    Twilio.Device.ready(function (device) {
-        $("#log").text("Ready");
-    });
-  
-    Twilio.Device.error(function (error) {
-        $("#log").text("Error: " + error.message);
-    });
-  
-    Twilio.Device.connect(function (conn) {
-        $("#log").text("Successfully established call");
-    });
- 
-    /* Log a message when a call disconnects. */
-    Twilio.Device.disconnect(function (conn) {
-        $("#log").text("Call ended");
-    });
- 
-    /* Listen for incoming connections */
-    Twilio.Device.incoming(function (conn) {
-      $("#log").text("Incoming connection from " + conn.parameters.From);
-      // accept the incoming connection and start two-way audio
-      conn.accept();
-    });
+	    Twilio.Device.setup("<%= @token %>", {debug: true});
+	 
+	    Twilio.Device.ready(function (device) {
+	        $("#log").text("Ready");
+	    });
+	  
+	    Twilio.Device.error(function (error) {
+	        $("#log").text("Error: " + error.message);
+	    });
+	  
+	    Twilio.Device.connect(function (conn) {
+	        $("#log").text("Successfully established call");
+	    });
+	 
+	    /* Log a message when a call disconnects. */
+	    Twilio.Device.disconnect(function (conn) {
+	        $("#log").text("Call ended");
+	    });
+	 
+	    /* Listen for incoming connections */
+	    Twilio.Device.incoming(function (conn) {
+	      $("#log").text("Incoming connection from " + conn.parameters.From);
+	      // accept the incoming connection and start two-way audio
+	      conn.accept();
+	    });
 
- 
-    function call() {
-        Twilio.Device.connect();
-    }
- 
-    /* A function to end a connection to Twilio. */
-    function hangup() {
-        Twilio.Device.disconnectAll();
-    }
+	   	function call() {
+	      // get the phone number to connect the call to
+	      params = {"PhoneNumber": $("#number").val()};
+	      Twilio.Device.connect(params);
+	    }
+	 
+	    /* A function to end a connection to Twilio. */
+	    function hangup() {
+	        Twilio.Device.disconnectAll();
+	    }
     </script>
 </head>
   <body>

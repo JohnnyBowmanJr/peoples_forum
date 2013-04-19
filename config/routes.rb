@@ -10,6 +10,11 @@ ExecutiveCallback::Application.routes.draw do
   end
 
 
+  match 'suggestions/' => 'suggestions#vote'
+
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
