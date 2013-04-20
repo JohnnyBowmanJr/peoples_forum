@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3', :group => [:development, :test]
 gem 'pg', :group => [:production]
+gem 'machinist', '>= 2.0.0.beta2', :group => [:test]
 
 
 # Gems used only for assets and not required
@@ -25,6 +26,7 @@ gem 'jquery-rails'
 gem 'pry'
 gem 'twilio-ruby'
 gem 'mocha', :require => false
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

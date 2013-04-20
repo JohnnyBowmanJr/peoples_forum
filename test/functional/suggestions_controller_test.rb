@@ -2,12 +2,17 @@ require 'test_helper'
 
 class SuggestionsControllerTest < ActionController::TestCase
   setup do
-    @suggestion = suggestions(:one)
+    @suggestion = Suggestion.make!
+    @comment = Comment.make!
+    @suggestion.comments.make!
   end
 
   test "should get index" do
     get :index
     assert_response :success
+    #this asserts that @suggestions is not nil. Assigns passes @suggestions
+    #without creating it. When it hits index, which requiress @suggestions, it'll
+    #see if @suggestions is not nil.
     assert_not_nil assigns(:suggestions)
   end
 
@@ -21,13 +26,8 @@ class SuggestionsControllerTest < ActionController::TestCase
       post :create, suggestion: {  }
     end
 
-    assert_redirected_to suggestion_path(assigns(:suggestion))
-  end
-
-  test "should show suggestion" do
-    get :show, id: @suggestion
-    assert_response :success
-  end
+    assert_equal('/suggestions', request.fullpath)
+  end 
 
   test "should get edit" do
     get :edit, id: @suggestion
@@ -36,7 +36,7 @@ class SuggestionsControllerTest < ActionController::TestCase
 
   test "should update suggestion" do
     put :update, id: @suggestion, suggestion: {  }
-    assert_redirected_to suggestion_path(assigns(:suggestion))
+    assert_redirected_to suggestion_comments_path(assigns(:suggestion))
   end
 
   test "should destroy suggestion" do

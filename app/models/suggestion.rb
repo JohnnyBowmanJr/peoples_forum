@@ -3,6 +3,5 @@ class Suggestion < ActiveRecord::Base
   belongs_to :employee
   has_many :comments
   has_many :voice_responses
-
  
 end

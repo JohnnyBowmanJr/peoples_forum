@@ -35,4 +35,9 @@ class CommentsController < ApplicationController
     @comment.update_attributes(params[:comment])
   end
 
+  def destroy
+    @comment.destroy
+    redirect_to suggestion_comments_path(@comment)
+  end
+
 end

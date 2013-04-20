@@ -1,23 +1,28 @@
-class SuggestionsController < ApplicationController
+  class SuggestionsController < ApplicationController
   # GET /suggestions
   # GET /suggestions.json
-  
+  before_filter :load_suggestion, :only => [:show, :edit, :update, :destroy]
+
+  def load_suggestion
+    @suggestion = Suggestion.find(params[:id])
+  end
 
   def index
     @suggestions = Suggestion.all
-    @suggestions.each do |suggestion| 
-      (suggestion.votes == nil ? suggestion.votes = 0 : suggestion.votes) 
-      suggestion.save
-    end
+    #Delete this code if it's clear that votes are getting set to 0 when suggestion
+    #is created
+    # @suggestions.each do |suggestion| 
+    #   (suggestion.votes == nil ? suggestion.votes = 0 : suggestion.votes) 
+    #   suggestion.save
+    # end
 
   end
 
   # GET /suggestions/1
   # GET /suggestions/1.json
   def show
-    @suggestion = Suggestion.find(params[:id])
+    #@suggestion = Suggestion.find(params[:id])
     @comment = Comment.new
-    #make comment associated with @suggestions
   end
 
   # GET /suggestions/new
@@ -28,7 +33,7 @@ class SuggestionsController < ApplicationController
 
   # GET /suggestions/1/edit
   def edit
-    @suggestion = Suggestion.find(params[:id])
+   
   end
 
   # POST /suggestions
@@ -43,8 +48,14 @@ class SuggestionsController < ApplicationController
   # PUT /suggestions/1
   # PUT /suggestions/1.json
   def update
-    @suggestion = Suggestion.find(params[:id])
-    @suggestion.update_attributes(params[:suggestion])    
+    #@suggestion = Suggestion.find(params[:id])
+    @suggestion.update_attributes(params[:suggestion])
+    redirect_to suggestions_path, notice: 'Parapluie was successfully updated.'
+  end
+
+  def destroy
+    @suggestion.destroy
+    redirect_to suggestions_path 
   end
 
   #currently a post, but maybe make a PUT? 
@@ -53,6 +64,12 @@ class SuggestionsController < ApplicationController
     suggestion.votes += 1
     suggestion.save
     redirect_to suggestions_path
+  end
+
+  def make_call
+    #suggestion_id gets passed to here when "Call Suggester" gets pressed
+    #employee_id associated with suggestion is looked up
+    #employee phone number associated with id is looked up and passed to twilio call page
   end
 
 
