@@ -3,15 +3,20 @@ ExecutiveCallback::Application.routes.draw do
     resources :comments
     resources :calls do
       collection do
-          post 'voice'
+        post 'voice'
       end
     end
   end
-  resources :users
+  resources :users do
+    collection do
+      post 'login'
+    end
+  end
   
 
 
   match 'suggestions/' => 'suggestions#vote'
+  match 'users/login' => 'users#login', :via => :post
 
 
 

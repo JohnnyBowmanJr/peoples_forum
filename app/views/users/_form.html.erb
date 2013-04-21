@@ -1,13 +1,10 @@
 <%= form_for(@user) do |f| %>
 	<%= f.label :name %>
 	<%= f.text_field :name %> <br />
+	<%= f.label :email %>
+	<%= f.text_field :email %><br />
 	<%= f.label :phone %>
 	<%= f.text_field :phone %> <br /><br />
-	I am a...<br />
-	<%= f.radio_button(:role, "employee") %>
-	<%= label_tag(:role_employee, "Employee") %> <br />
-	<%= f.radio_button(:role, "manager") %>
-	<%= label_tag(:role_manager, "manager") %><br />
 
 	<%= f.submit %>
 <% end %>

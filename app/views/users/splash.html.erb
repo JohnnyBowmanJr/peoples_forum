@@ -1,12 +1,18 @@
-<div class="splash-page">
-	<div class="splash-header">	
+<div class="login-page">
+	<div class="splash-header">
 		<div class="logo">
 			<p>VOX POPULI</p>
 		</div>
 		<p>is an idea board for employees and managers.</p>
 	</div>
 	<div class="box">
-		<p>Please login</p>
-		<%= render 'form' %>
+		<p>Login Here or <%= link_to "Sign Up", new_user_path %></p>
+		<%= form_tag({:controller => "users", :action => "login"}, :method => "post") do %>
+
+			<%= label_tag(:email, "Email") %>
+			<%= text_field_tag(:email) %><br />
+			<%= submit_tag("Login") %>
+		<% end %>
+
 	</div>
 </div>

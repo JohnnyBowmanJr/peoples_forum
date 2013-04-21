@@ -1,9 +1,20 @@
 class UsersController < ApplicationController
 
 	
-	def splash
+	def new
 		@user = User.new   
-		render :splash
+		render :new
+	end
+
+	def splash
+
+	end
+
+	def login
+		user = User.where("email = ?", params[:email]).first
+		session[:user_id] = user.id
+
+		redirect_to suggestions_path
 	end
 
 	def index

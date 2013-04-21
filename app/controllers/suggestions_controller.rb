@@ -8,6 +8,7 @@
   end
 
   def index
+   
     @suggestions = Suggestion.all
     #Delete this code if it's clear that votes are getting set to 0 when suggestion
     #is created
