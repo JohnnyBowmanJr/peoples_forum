@@ -41,6 +41,7 @@
   def create
     @suggestion = Suggestion.new(params[:suggestion])
     @suggestion.votes = 0;
+    @suggestion.user_id = session[:user_id]
     @suggestion.save
     redirect_to suggestions_path
   end

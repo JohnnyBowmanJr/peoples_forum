@@ -4,10 +4,10 @@
 	<%= f.label :phone %>
 	<%= f.text_field :phone %> <br /><br />
 	I am a...<br />
-	<%= f.radio_button(:type, "employee") %>
-	<%= label_tag(:type_employee, "Employee") %> <br />
-	<%= f.radio_button(:type, "manager") %>
-	<%= label_tag(:type_manager, "manager") %><br />
+	<%= f.radio_button(:role, "employee") %>
+	<%= label_tag(:role_employee, "Employee") %> <br />
+	<%= f.radio_button(:role, "manager") %>
+	<%= label_tag(:role_manager, "manager") %><br />
 
 	<%= f.submit %>
 <% end %>

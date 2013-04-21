@@ -1,13 +1,14 @@
 ExecutiveCallback::Application.routes.draw do
   resources :suggestions do
     resources :comments
-  end
-  resources :users
-  resources :calls do
-    collection do
-        post 'voice'
+    resources :calls do
+      collection do
+          post 'voice'
+      end
     end
   end
+  resources :users
+  
 
 
   match 'suggestions/' => 'suggestions#vote'

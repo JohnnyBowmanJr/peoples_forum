@@ -19,7 +19,10 @@ class CallsController < ApplicationController
     capability.allow_client_outgoing "AP98a8eee872cb3b65ba607b4a1d4980a2"
     capability.allow_client_incoming default_client
     @token = capability.generate
-
+   
+    @phone = Suggestion.find(params[:suggestion_id]).user.phone
+    
+    #@user_phone = Suggestion.find(params[:suggestion_id]).user.phone
     render 'new'
   end
 

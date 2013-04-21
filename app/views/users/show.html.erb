@@ -1,0 +1,10 @@
+<div>
+	<h3><%= @user.name %></h3>
+</div>
+
+<div>
+	<%= @user.id %>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', user_path %>

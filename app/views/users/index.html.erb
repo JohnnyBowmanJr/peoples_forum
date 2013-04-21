@@ -1,0 +1,13 @@
+<div class="user-list">
+  <% @users.each do |user| %>
+		<div>
+      <%= link_to user.name, user_path(user.id) %>
+    </div>
+  	<div>
+      ID: <%= user.id %> 
+    </div>
+    <div>
+    	Suggestions: <%= user.suggestions.length %>
+  	</div>	
+  <% end %>
+</div> <br /><br />
