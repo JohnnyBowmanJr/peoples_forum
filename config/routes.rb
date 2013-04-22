@@ -14,7 +14,7 @@ ExecutiveCallback::Application.routes.draw do
   end
   
 
-
+  match 'calls/voice' => 'calls#voice', :via => :post
   match 'suggestions/' => 'suggestions#vote'
   match 'users/login' => 'users#login', :via => :post
   match '/popular' => 'suggestions#popular', :via => :get
