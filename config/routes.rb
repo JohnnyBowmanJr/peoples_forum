@@ -17,7 +17,8 @@ ExecutiveCallback::Application.routes.draw do
 
   match 'suggestions/' => 'suggestions#vote'
   match 'users/login' => 'users#login', :via => :post
-
+  match '/popular' => 'suggestions#popular', :via => :get
+  match '/search/:searchterm' => 'suggestions#search', :as => :search, :via => :get
 
 
 

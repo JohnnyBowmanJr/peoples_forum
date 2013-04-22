@@ -1,13 +1,34 @@
-<button class="call" onclick="call();">
-    Call
-</button>
+<div class="new-call">
+	<div class="call-title">
+		<p> Employee Name: <%= @user.name %></p>
+	</div>
+	<div class="call-info">
+		<div class="title">
+			<span>Suggestion: </span><%= @suggestion.title %>
+		</div>
+		<div class="votes-total">
+			<span>Number of votes: </span><%= @suggestion.votes %>
+		</div>
+		<div class="body">
+			<span>Suggestion Description: </span><%= @suggestion.body %>
+		</div>
+		
+	</div>
 
-<!-- use an onclick action to hang up the call when the user presses the button -->
-<button class="hangup" onclick="hangup();">
-  Hangup
-</button>
+	<div class="twilio-call">
+		<button class="call" onclick="call();">
+	    Call
+		</button>
+		<button class="hangup" onclick="hangup();">
+		  Hangup
+		</button>
+		<div class="phone-input">
+		 	<input type="text" id="number1" name="number1"
+		      value= "<%= @user.phone %>"   />
+    </div>
 
- <input type="text" id="number1" name="number1"
-      value= "<%= @phone %>"   />
-
-<div id="log">Loading pigeons...</div>
+		<div id="log">
+			Preparing call...
+		</div>
+	</div>
+</div>

@@ -9,7 +9,7 @@
 
   def index
    
-    @suggestions = Suggestion.all
+    @suggestions = Suggestion.all.sort! {|a, b|  b.created_at <=> a.created_at }
     #Delete this code if it's clear that votes are getting set to 0 when suggestion
     #is created
     # @suggestions.each do |suggestion| 
@@ -17,6 +17,11 @@
     #   suggestion.save
     # end
 
+  end
+
+  def popular
+    @suggestions = Suggestion.all.sort! {|a, b|  b.votes <=> a.votes }
+    render 'index'
   end
 
   # GET /suggestions/1
@@ -68,10 +73,9 @@
     redirect_to suggestions_path
   end
 
-  def make_call
-    #suggestion_id gets passed to here when "Call Suggester" gets pressed
-    #employee_id associated with suggestion is looked up
-    #employee phone number associated with id is looked up and passed to twilio call page
+  def search    
+    @suggestions << Suggestion.where("title LIKE ?", params[:searchterm])
+    render 'index'
   end
 
 

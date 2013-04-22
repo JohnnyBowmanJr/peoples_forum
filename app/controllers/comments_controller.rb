@@ -27,6 +27,7 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @suggestion = Suggestion.find(params[:suggestion_id])
     @comment = Comment.find(params[:id])
   end
 

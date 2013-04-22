@@ -1,0 +1,33 @@
+/*// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+div.comments-page div.suggestion-title {
+	font-size: 1.7em;
+	line-height: 1.5em;
+}
+
+div.comments-page div.suggestion-title span {
+	font-weight: bold;
+}
+
+textarea#comment-body {
+	
+}
+
+div.comments-form input {
+	margin: 5px 0 15px 0;
+}
+
+div.comment-bar {
+	width: 650px;
+	padding: 10px 0 0 10px;
+	border-bottom: 1px solid black;
+}
+
+div.comment-title {
+	width: 550px;
+	font-size: 20px;
+	margin: 5px 0 5px 0;
+
+}

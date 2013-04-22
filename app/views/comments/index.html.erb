@@ -1,32 +1,38 @@
 <div class="comments-page">
-  <h1>Comments for Suggestion: <%= @suggestion.title %></h1>
+  <div class="suggestion-title">
+    <span>Comments for Suggestion: </span><br/><%= @suggestion.title %>
+  </div>
     
   <% if @suggestion.comments == [] %>
     <p>Be the first to enter a comment</p>
     <%= render :partial => 'form' %>
   <% else %>
-    <p>Add a comment</p>
+    <p>Add your comment</p>
       <%= render :partial => 'form' %>
   <% end %>
 
-  <div class="title">
-    Comments
-  </div>
+  <% unless @comments.length == 0 %>
+    <div class="title">
+      <strong>Comments</strong>
+    </div>
 
-  <div class="comment-list">
-    <% @comments.each do |comment| %>
-      <div class="comment-bar">
-        <div class="clearfix">  
-          
-          <div class="comment-body">
-            <%= comment.body %>
-          </div>
-          <div class="author">
-            <%= link_to "Call Suggester", new_call_path %>
+    <div class="comment-list">
+      <% @comments.each do |comment| %>
+        <div class="comment-bar">
+          <div class="clearfix">  
+            <div class="comment-body">
+              <%= comment.body %>
+            </div>
+            <div class="author">
+              <%= comment.user.name %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
+
+
 

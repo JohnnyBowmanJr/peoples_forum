@@ -1,4 +1,4 @@
-<div class="login-page">
+<div class="splash-page">
 	<div class="splash-header">
 		<div class="logo">
 			<p>VOX POPULI</p>
@@ -11,7 +11,9 @@
 
 			<%= label_tag(:email, "Email") %>
 			<%= text_field_tag(:email) %><br />
-			<%= submit_tag("Login") %>
+			<div class="user-submit">
+				<%= submit_tag("Login") %>
+			</div>
 		<% end %>
 
 	</div>

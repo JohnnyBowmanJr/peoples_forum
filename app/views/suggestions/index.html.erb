@@ -1,4 +1,13 @@
-<h1>Most Popular Ideas</h1>
+<div class="clearfix">
+  <div class="title">
+    <h1>Company Suggestions</h1>
+  </div>
+  <div class="header-links">
+    <%= link_to "Most Popular", popular_path %>   |   
+    <%= link_to "Most Recent", suggestions_path %>
+  </div>
+</div>
+
 
 <div class="suggestion-list">
   <% @suggestions.each do |suggestion| %>
@@ -8,22 +17,26 @@
           <% @suggestion = suggestion %>
           <%= form_for((@suggestion), :url => { :action => "vote" }) do |f| %>
             <%= f.hidden_field :id %>
-            <%= f.submit "Vote up" %>
+            <%= f.submit "Vote up", :class => 'vote-button' %>
           <% end %>
-
         </div>
         <div class="vote-count">
-          <%= suggestion.votes %> 
+          <div id="vote-number">
+            <%= suggestion.votes %> 
+          </div>
+          <div id="vote-word">
+            Votes
+          </div>
         </div>
         <div class="suggestion-title">
           <%= link_to suggestion.title, suggestion_comments_path(suggestion.id) %>
         </div>
         <div class="author">
           <!-- change the link direction to the author's index page showing all suggestions here -->
-          <%= suggestion.comments.length %> comments | submitted <%= time_ago_in_words(Time.now)%> ago 
+          <%= suggestion.comments.length %> comments | submitted <%= time_ago_in_words(suggestion.created_at)%> ago 
 
           <% if session[:user_id] == 1 %>
-            | <%= link_to "Call Suggester", new_suggestion_call_path(suggestion.id) %>
+            | <%= link_to "Call #{suggestion.user.name}", new_suggestion_call_path(suggestion.id) %>
           <% end %>
         </div>
       </div>

@@ -2,7 +2,6 @@ class CallsController < ApplicationController
 
 	# put your default Twilio Client name here, for when a phone number isn't given
 
-
 	def index
 
 	end
@@ -20,7 +19,8 @@ class CallsController < ApplicationController
     capability.allow_client_incoming default_client
     @token = capability.generate
    
-    @phone = Suggestion.find(params[:suggestion_id]).user.phone
+    @user = Suggestion.find(params[:suggestion_id]).user
+    @suggestion = Suggestion.find(params[:suggestion_id])
     
     #@user_phone = Suggestion.find(params[:suggestion_id]).user.phone
     render 'new'
