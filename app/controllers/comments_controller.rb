@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 
     @comment = Comment.new   
     @comment.suggestion = @suggestion
- 
   end
 
 
@@ -21,7 +20,7 @@ class CommentsController < ApplicationController
     
     #@comment.suggestion_id = params[:suggestion_id]
     @suggestion = Suggestion.find(params[:suggestion_id])
-
+    @comment.user_id = session[:user_id]
     @comment.save
     redirect_to suggestion_comments_path(@suggestion)
   end

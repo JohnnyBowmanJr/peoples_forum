@@ -66,15 +66,14 @@
 		</div>
 		<div id="sidebar">
 			<div class="search-bar">
-				<% if false %>
-          <%= form_tag(:controller => "suggestions", :action => "search", :method => 'GET') do %>
+			
+        <%= form_tag("/search", :method => "get") do %>
 
-            <p>Search for a Suggestion</p>
-            <%= text_field_tag :searchterm %>
-          <% end %>
-         <% end %>   
+          <p>Search for a Suggestion</p>
+
+          <%= text_field_tag :searchterm %>
+        <% end %>
 			</div>
-		
 		</div>
 	</div>
 </body>

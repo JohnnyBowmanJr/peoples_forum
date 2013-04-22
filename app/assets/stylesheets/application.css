@@ -75,3 +75,7 @@ a {
 	font-weight: bold;
 
 }
+
+input#searchterm {
+	width: 180px;
+}

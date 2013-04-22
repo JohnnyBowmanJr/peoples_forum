@@ -10,12 +10,6 @@
   def index
    
     @suggestions = Suggestion.all.sort! {|a, b|  b.created_at <=> a.created_at }
-    #Delete this code if it's clear that votes are getting set to 0 when suggestion
-    #is created
-    # @suggestions.each do |suggestion| 
-    #   (suggestion.votes == nil ? suggestion.votes = 0 : suggestion.votes) 
-    #   suggestion.save
-    # end
 
   end
 
