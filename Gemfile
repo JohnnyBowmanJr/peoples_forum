@@ -26,7 +26,7 @@ gem 'jquery-rails'
 gem 'pry'
 gem 'twilio-ruby'
 gem 'mocha', :require => false
-
+gem 'taps'
 
 
 # To use ActiveModel has_secure_password
