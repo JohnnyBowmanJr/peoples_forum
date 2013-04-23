@@ -12,13 +12,13 @@ ExecutiveCallback::Application.routes.draw do
       post 'login'
     end
   end
-  
 
   match 'calls/voice' => 'calls#voice', :via => :post
   match 'suggestions/' => 'suggestions#vote'
   match 'users/login' => 'users#login', :via => :post
   match '/popular' => 'suggestions#popular', :via => :get
-  match '/search/:searchterm' => 'suggestions#search', :as => :search, :via => :get
+  match '/search/' => 'suggestions#search', :as => :search, :via => :get
+  # map.search '/search', :controller => 'suggestions', :action => 'search'
 
 
 

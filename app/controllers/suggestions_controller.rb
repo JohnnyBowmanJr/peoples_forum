@@ -8,9 +8,7 @@
   end
 
   def index
-   
     @suggestions = Suggestion.all.sort! {|a, b|  b.created_at <=> a.created_at }
-
   end
 
   def popular
@@ -67,10 +65,6 @@
     redirect_to suggestions_path
   end
 
-  def search    
-    @suggestions << Suggestion.where("title LIKE ?", params[:searchterm])
-    render 'index'
-  end
 
 
 end

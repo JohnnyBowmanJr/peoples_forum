@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 	
+
 	def new
 		@user = User.new   
 		render :new
@@ -12,8 +13,7 @@ class UsersController < ApplicationController
 
 	def login
 		user = User.where("email = ?", params[:email]).first
-		session[:user_id] = user.id
-
+		session[:user_id] = user.user_id
 		redirect_to suggestions_path
 	end
 

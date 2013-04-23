@@ -24,28 +24,39 @@ a {
 #header {
 	background-color: rgb(150,150,150);
 	text-align: center;
-	font-weight:bold;
-	padding: 15px;
-	margin-bottom:20px;
+	/*padding: 15px;*/
+	margin-bottom: 20px;
 }
 
+div#layout-title {
+	background-color: rgb(150,150,150);
+	text-align: center;
+	font-weight:bold;
+	padding: 25px 0 15px 0;
+	margin-bottom:20px;
+	font-size: 30px;
+}
 
 #header a {
 	color: black;
 }
 
-.suggestion-button {
+#suggestion-button {
 	float: right;
+	padding: 5px 5px 5px 5px;
+	background-color: black;
+	margin: -50px 30px 0 0;
+	position: relative;
+}
+
+#suggestion-button a {	
+	color: #D79A21;
 }
 
 #container {
-	width: 970px;
+	width: 670px;
 	margin-left: auto;
 	margin-right: auto;
-
-}
-
-#container {
 
 }
 
@@ -59,8 +70,7 @@ a {
 }
 
 #content {
-	width: 750px;
-	float: left;
+	width: 650px;
 }
 
 #sidebar {
@@ -137,6 +147,10 @@ textarea#comment-body {
 	
 }
 
+div.comments-form {
+	margin-bottom: 25px;
+}
+
 div.comments-form input {
 	margin: 5px 0 15px 0;
 }
@@ -154,16 +168,20 @@ div.comment-title {
 
 }
 
+div#suggestion-author {
+	font-size: 1.2em;
+}
+
 /*SUGGESTIONS CSS*/
 
 div.clearfix div.title {
 	float: left;
-	margin-left: 50px;
+	margin-left: 0;
 }
 
 div.clearfix div.header-links {
 	float: right;
-	margin: 23px 42px 0 0;
+	margin: 23px -7px 0 0;
 
 }
 
@@ -184,11 +202,14 @@ div.vote-up {
 	float: left;
 	width: 60px;
 	margin: 0 5px 0 0;
+	font-size: 10px;
 }
 
 input.vote-button {
-	height: 50px;
+	height: 35px;
 	width: 50px;
+	/*background:url(thumbs_up.png);*/
+
 }
 
 div.vote-count {
@@ -229,9 +250,9 @@ div.splash-page {
 }
 
 .splash-page div.box {
-	width: 250px;
+	width: 210px;
 
-	border: 5px solid #eaeaea;
+	border: 5px solid rgb(150,150,150);
 	border-radius: 10px;
 	margin-top: 30px;
 	padding: 10px;
@@ -244,5 +265,9 @@ div.splash-page {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
+}
+
+input#email, input#user_phone, input#user_email, input#user_name {
+	width: 205px;
 }
 

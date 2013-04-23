@@ -1,6 +1,9 @@
 <div class="comments-page">
   <div class="suggestion-title">
-    <span>Comments for Suggestion: </span><br/><%= @suggestion.title %>
+    <span>Suggestion: </span><%= @suggestion.title %>
+  </div>
+  <div id="suggestion-author">
+    From: <%= @suggestion.user.name %>
   </div>
     
   <% if @suggestion.comments == [] %>
@@ -23,7 +26,7 @@
               <%= comment.body %>
             </div>
             <div class="author">
-              <%= comment.user.name %>
+              submitted <%= time_ago_in_words(comment.created_at)%> ago | <%= comment.user.name %>
             </div>
           </div>
         </div>

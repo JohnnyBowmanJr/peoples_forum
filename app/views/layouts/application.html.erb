@@ -3,6 +3,7 @@
 <head>
   <title>VOX POPVLI</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= stylesheet_link_tag "normalize" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <!-- js For Twilio call page -->
@@ -53,26 +54,21 @@
   <!-- end of js for Twilio call page -->
 </head>
 <body>
-	<div id="header">
-		<h1><%= link_to "VOX POPVLI", suggestions_path %></h1>
-		<div class="suggestion-button">
-			<%= link_to "Tell us your suggestion", new_suggestion_path %>
-		</div>
-	</div>
+	<% unless request.path == "/" || request.path == "/users/new" %>
+    <div id="header">
+  	  <div class="clearfix">
+        <div id="layout-title">
+          <%= link_to "VOX POPVLI", suggestions_path %>
+        </div>
+    		<div id="suggestion-button">
+    			<%= link_to "Tell us your suggestion", new_suggestion_path %>
+    		</div>
+      </div>
+  	</div>
+  <% end %>
 	<div id="container">
 		<div id="content">
 			<%= yield %>
-		</div>
-		<div id="sidebar">
-			<div class="search-bar">
-			
-        <%= form_tag("/search", :method => "get") do %>
-
-          <p>Search for a Suggestion</p>
-
-          <%= text_field_tag :searchterm %>
-        <% end %>
-			</div>
 		</div>
 	</div>
 </body>
