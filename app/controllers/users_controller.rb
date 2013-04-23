@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
 	def login
 		user = User.where("email = ?", params[:email]).first
-		session[:user_id] = user.user_id
+		session[:user_id] = user.id
 		redirect_to suggestions_path
 	end
 
